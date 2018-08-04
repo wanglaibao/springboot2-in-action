@@ -16,6 +16,8 @@ public class HelloAppApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		System.out.println("AAAAAAAAAAAA");
+		System.out.println("Hello,Welcome to  Spring Boot 2.0 World!");
+		System.out.println("Hello,Welcome to  Spring Boot 2.0 World!");
+		System.out.println("Hello,Welcome to  Spring Boot 2.0 World!");
 	}
 }
