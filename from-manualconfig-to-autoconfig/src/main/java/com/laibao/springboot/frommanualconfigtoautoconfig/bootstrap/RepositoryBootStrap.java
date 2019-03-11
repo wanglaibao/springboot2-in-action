@@ -1,6 +1,7 @@
 package com.laibao.springboot.frommanualconfigtoautoconfig.bootstrap;
 
 import com.laibao.springboot.frommanualconfigtoautoconfig.repository.MyFirstRepository;
+import com.laibao.springboot.frommanualconfigtoautoconfig.repository.MySecondRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -21,8 +22,13 @@ public class RepositoryBootStrap {
 
         MyFirstRepository myFirstRepository = configApplicationContext.getBean("myFirstRepository",MyFirstRepository.class);
 
-        System.out.println("myFirstRepository Bean "+myFirstRepository)
-        ;
+        System.out.println("myFirstRepository Bean "+myFirstRepository);
+        System.out.println();
+
+        MySecondRepository mySecondRepository = configApplicationContext.getBean("mySecondRepository",MySecondRepository.class);
+
+        System.out.println("mySecondRepository Bean "+mySecondRepository);
+
         configApplicationContext.close();
     }
 }
