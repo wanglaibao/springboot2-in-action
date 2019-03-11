@@ -1,0 +1,16 @@
+package com.laibao.springboot.frommanualconfigtoautoconfig.annotation;
+
+import com.laibao.springboot.frommanualconfigtoautoconfig.configuration.HelloWorldConfiguration;
+import org.springframework.context.annotation.Import;
+
+import java.lang.annotation.*;
+
+/**
+ * 激活HelloWorld模块
+ */
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Import(HelloWorldImportSelector.class)
+public @interface EnableHelloWorldBySelecter {
+}
