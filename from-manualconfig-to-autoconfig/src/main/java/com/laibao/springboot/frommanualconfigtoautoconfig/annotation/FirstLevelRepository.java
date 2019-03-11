@@ -10,5 +10,7 @@ import java.lang.annotation.*;
 @Documented
 @Repository
 public @interface FirstLevelRepository {
+
     String value() default "";
+
 }
