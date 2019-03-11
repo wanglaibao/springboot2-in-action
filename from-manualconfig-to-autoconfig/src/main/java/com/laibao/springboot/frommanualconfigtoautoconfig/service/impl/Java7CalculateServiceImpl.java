@@ -14,6 +14,7 @@ public class Java7CalculateServiceImpl implements CalculateService {
 
     @Override
     public int sum(Integer... vararg) {
+        System.out.println("java7 for 循环实现");
         int sum = 0;
         for (Integer intNumber:vararg) {
             sum += intNumber;

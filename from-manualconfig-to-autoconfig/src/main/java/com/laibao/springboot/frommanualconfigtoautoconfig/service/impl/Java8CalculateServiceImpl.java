@@ -15,6 +15,7 @@ public class Java8CalculateServiceImpl implements CalculateService {
 
     @Override
     public int sum(Integer... vararg) {
+        System.out.println("java8 lambda 实现");
         //return Stream.of(vararg).reduce(0,Integer::sum);
         return Stream.of(vararg).reduce(0,(sum,element) -> sum + element);
     }

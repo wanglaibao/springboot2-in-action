@@ -14,7 +14,7 @@ public class Java8CalculateServiceBootStrap {
     public static void main(String[] args) {
         ConfigurableApplicationContext configApplicationContext = new SpringApplicationBuilder(Java7CalculateServiceBootStrap.class)
                 .web(WebApplicationType.NONE)
-                .profiles("java7")
+                .profiles("java8")
                 .run(args);
 
         // CalculateService Bean 是否存在 或者存在多个Bean矛盾
