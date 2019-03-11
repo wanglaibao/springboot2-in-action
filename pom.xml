@@ -9,7 +9,8 @@
 	<modules>
 		<module>helloapp</module>
         <module>jspexample</module>
-    </modules>
+		<module>from-manualconfig-to-autoconfig</module>
+	</modules>
 	<packaging>pom</packaging>
 
 	<name>springboot2-in-action</name>
