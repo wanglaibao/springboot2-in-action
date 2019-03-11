@@ -2,9 +2,7 @@ package com.laibao.springboot.frommanualconfigtoautoconfig.bootstrap;
 
 import com.laibao.springboot.frommanualconfigtoautoconfig.repository.MyFirstRepository;
 import com.laibao.springboot.frommanualconfigtoautoconfig.repository.MySecondRepository;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -29,6 +27,7 @@ public class RepositoryBootStrap {
 
         System.out.println("mySecondRepository Bean "+mySecondRepository);
 
+        //关闭上下文
         configApplicationContext.close();
     }
 }
