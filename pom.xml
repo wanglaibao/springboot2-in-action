@@ -10,6 +10,7 @@
 		<module>helloapp</module>
         <module>jspexample</module>
 		<module>from-manualconfig-to-autoconfig</module>
+		<module>understanding-springapplication-class</module>
 	</modules>
 	<packaging>pom</packaging>
 
