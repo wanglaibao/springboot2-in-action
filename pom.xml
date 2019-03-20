@@ -11,7 +11,8 @@
         <module>jspexample</module>
 		<module>from-manualconfig-to-autoconfig</module>
 		<module>understanding-springapplication-class</module>
-	</modules>
+        <module>spring-reactive</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>springboot2-in-action</name>
