@@ -1,8 +1,8 @@
 package com.laibao.spring.reactive.defaultmethod;
 
-public interface DefualtMethodInterface {
+public interface DefaultMethodInterfaceTwo {
     default String sayHello() {
-        return "你好啊，欢迎来这里";
+        return "你好啊，欢迎来这里: "+ DefaultMethodInterfaceTwo.class.getName();
     }
 
     static String welcome(String message) {
