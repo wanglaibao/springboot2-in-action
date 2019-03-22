@@ -1,6 +1,6 @@
-package com.laibao.spring.reactive;
+package com.laibao.spring.reactive.lambda;
 
-import com.laibao.spring.reactive.simpleexample.MyMoney;
+import com.laibao.spring.reactive.lambda.simpleexample.MyMoney;
 
 import java.text.DecimalFormat;
 import java.util.function.Function;

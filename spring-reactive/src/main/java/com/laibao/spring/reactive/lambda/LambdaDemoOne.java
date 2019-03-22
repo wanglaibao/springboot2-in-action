@@ -1,6 +1,6 @@
-package com.laibao.spring.reactive;
+package com.laibao.spring.reactive.lambda;
 
-import com.laibao.spring.reactive.functionalinterface.FunctionInterfaceOne;
+import com.laibao.spring.reactive.lambda.functionalinterface.FunctionInterfaceOne;
 
 public class LambdaDemoOne {
 

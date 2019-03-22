@@ -1,6 +1,4 @@
-package com.laibao.spring.reactive.simpleexample;
-
-import com.laibao.spring.reactive.functionalinterface.IMoneyFormat;
+package com.laibao.spring.reactive.lambda.simpleexample;
 
 import java.util.function.Function;
 

@@ -1,4 +1,4 @@
-package com.laibao.spring.reactive;
+package com.laibao.spring.reactive.lambda;
 
 import java.util.stream.IntStream;
 
