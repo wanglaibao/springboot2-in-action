@@ -1,4 +1,4 @@
-package com.laibao.spring.reactive.model;
+package com.laibao.spring.reactive.lambda.model;
 
 public class Dog {
 

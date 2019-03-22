@@ -1,4 +1,4 @@
-package com.laibao.spring.reactive.functionalinterface;
+package com.laibao.spring.reactive.lambda.functionalinterface;
 
 @FunctionalInterface
 public interface IMath {

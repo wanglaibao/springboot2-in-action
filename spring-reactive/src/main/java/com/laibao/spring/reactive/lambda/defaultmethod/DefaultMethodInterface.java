@@ -1,4 +1,4 @@
-package com.laibao.spring.reactive.defaultmethod;
+package com.laibao.spring.reactive.lambda.defaultmethod;
 
 public interface DefaultMethodInterface {
 
