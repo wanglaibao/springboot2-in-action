@@ -6,9 +6,6 @@ public class Student {
     private Gender gender;
     private Grade grade;
 
-    public Student() {
-    }
-
     public Student(String name, int age, Gender gender, Grade grade) {
         this.name = name;
         this.age = age;
