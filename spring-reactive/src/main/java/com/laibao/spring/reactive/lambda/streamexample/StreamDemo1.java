@@ -16,5 +16,8 @@ public class StreamDemo1 {
         IntStream intStream = IntStream.of(1,2,3,4,5,6,7,8,9,10);
         int sum1 = intStream.sum();
         System.out.println("the sum1 is "+sum1);
+
+        IntStream intStream1 = IntStream.of(arrays);
+        System.out.println(intStream1.sum());
     }
 }
