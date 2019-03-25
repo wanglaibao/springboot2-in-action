@@ -13,7 +13,7 @@ public class StreamDemo2 {
         Stream<Integer> integerStream =list.stream();
 
         int[] intArray = {1,2,3,4,5,6,7,8,9};
-       IntStream intStream = Arrays.stream(intArray);
+        IntStream intStream = Arrays.stream(intArray);
 
         DoubleStream doubleStream = DoubleStream.of(12.01,23.01,23.04);
         IntStream intStream1 = IntStream.rangeClosed(1,100);
