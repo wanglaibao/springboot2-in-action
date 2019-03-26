@@ -1,6 +1,5 @@
 package com.laibao.springboot.frommanualconfigtoautoconfig.annotation;
 
-import com.laibao.springboot.frommanualconfigtoautoconfig.configuration.HelloWorldConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
