@@ -12,7 +12,8 @@
 		<module>from-manualconfig-to-autoconfig</module>
 		<module>understanding-springapplication-class</module>
         <module>spring-reactive</module>
-    </modules>
+		<module>simple-servlet-example</module>
+	</modules>
 	<packaging>pom</packaging>
 
 	<name>springboot2-in-action</name>
