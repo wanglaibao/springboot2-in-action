@@ -1,7 +1,5 @@
 package com.laibao.springboot.frommanualconfigtoautoconfig.annotation;
 
-import org.springframework.stereotype.Repository;
-
 import java.lang.annotation.*;
 
 @Target({ElementType.TYPE})
