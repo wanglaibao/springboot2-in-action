@@ -2,6 +2,7 @@ package com.laibao.spring.reactive.controller;
 
 import com.laibao.spring.reactive.domain.User;
 import com.laibao.spring.reactive.repository.UserRepository;
+import com.laibao.spring.reactive.utils.CheckUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -53,6 +54,7 @@ public class UserController {
         //有ID的情况下是修改ID为空时新增
         //根据实际情况是否设置空ID
         user.setId(null);
+        CheckUtils.checkUserName(user.getName());
         return userRepository.save(user);
     }
 
@@ -83,6 +85,7 @@ public class UserController {
      */
     @PutMapping("/{id}")
     public Mono<ResponseEntity<User>> updateUser(@PathVariable String id,@Valid @RequestBody User originalUser) {
+        CheckUtils.checkUserName(originalUser.getName());
         return userRepository.findById(id)
                         // flatMap 操作数据
                         .flatMap(user -> {
