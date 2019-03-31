@@ -13,7 +13,8 @@
 		<module>understanding-springapplication-class</module>
         <module>spring-reactive</module>
 		<module>simple-servlet-example</module>
-	</modules>
+        <module>spring-reactive-routerfunction</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>springboot2-in-action</name>
