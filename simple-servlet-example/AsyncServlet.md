@@ -9,3 +9,6 @@
    当我们采用同步Servlet的时候，我们的业务逻辑代码花多少时间，与这个Servlet关联的线程也就需要等待多少时间，这就是阻塞。
 
 ### AsyncServlet是如何工作的
+
+### 启动mongodb
+\bin\mongod --dbpath d:\DB\mongodb\data --smallfiles
