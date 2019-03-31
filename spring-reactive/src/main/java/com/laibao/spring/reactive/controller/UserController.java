@@ -113,10 +113,20 @@ public class UserController {
      * @param id
      * @return
      */
-    @GetMapping(value = "/{id}",produces = "text/event-stream")
+    @GetMapping(value = "/stream/{id}",produces = "text/event-stream")
     public Mono<ResponseEntity<User>> getUserByIdSSE(@PathVariable String id) {
         return userRepository.findById(id)
                 .map(user -> new ResponseEntity<User>(user,HttpStatus.OK))
                 .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @GetMapping("/age/{start}/{ent}")
+    public Flux<User> getUserByAge(@PathVariable int start,@PathVariable int end) {
+        return this.userRepository.findUserByAgeBetween(start,end);
+    }
+
+    @GetMapping(value = "/stream/age/{start}/{ent}",produces = "text/event-stream")
+    public Flux<User> getUserByAgeSSE(@PathVariable int start,@PathVariable int end) {
+        return this.userRepository.findUserByAgeBetween(start,end);
     }
 }
