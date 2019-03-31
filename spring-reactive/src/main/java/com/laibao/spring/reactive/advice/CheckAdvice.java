@@ -1,5 +1,6 @@
 package com.laibao.spring.reactive.advice;
 
+import com.laibao.spring.reactive.exceptions.CheckException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -19,6 +20,12 @@ public class CheckAdvice {
     }
 
 
+    @ExceptionHandler(CheckException.class)
+    public ResponseEntity handleCheckException(CheckException checkException) {
+
+        return new ResponseEntity<String>(convertToString(checkException), HttpStatus.BAD_REQUEST);
+    }
+
     /**
      * 把校验异常转换成字符串
      * @param webExchangeBindException
@@ -29,5 +36,15 @@ public class CheckAdvice {
                                 .stream()
                                 .map(e -> e.getField()+" : "+e.getDefaultMessage())
                                 .reduce(" ",(str1,str2) -> str1+"\n"+str2);
+    }
+
+
+    /**
+     * 把校验异常转换成字符串
+     * @param checkException
+     * @return
+     */
+    private String convertToString(CheckException checkException) {
+        return checkException.getFieldName()+" :错误的值 "+checkException.getFieldValue();
     }
 }
