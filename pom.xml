@@ -14,6 +14,7 @@
         <module>spring-reactive</module>
 		<module>simple-servlet-example</module>
         <module>spring-reactive-routerfunction</module>
+        <module>webflux-webclient</module>
     </modules>
 	<packaging>pom</packaging>
 
