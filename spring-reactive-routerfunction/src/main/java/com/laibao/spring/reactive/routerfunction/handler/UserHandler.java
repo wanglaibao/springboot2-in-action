@@ -2,6 +2,7 @@ package com.laibao.spring.reactive.routerfunction.handler;
 
 import com.laibao.spring.reactive.routerfunction.domain.User;
 import com.laibao.spring.reactive.routerfunction.repository.UserRepository;
+import com.laibao.spring.reactive.routerfunction.utils.CheckUtils;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
@@ -39,9 +40,15 @@ public class UserHandler {
      */
     public Mono<ServerResponse> createUser(ServerRequest request) {
         Mono<User> userMono = request.bodyToMono(User.class);
-        return ok()
-                .contentType(APPLICATION_JSON_UTF8)
-                .body(userRepository.saveAll(userMono), User.class);
+        //下面这个方法在SpringBoot2.0.0是可以工作的，但是在2.0.1以及以后的版本中是无法工作的，所有不要使用，而且会阻塞线程
+        //User user = userMono.block();
+
+        return userMono.flatMap(user -> {
+            CheckUtils.checkUserName(user.getName());
+            return ok()
+                    .contentType(APPLICATION_JSON_UTF8)
+                    .body(userRepository.save(user), User.class);
+        });
     }
 
 
