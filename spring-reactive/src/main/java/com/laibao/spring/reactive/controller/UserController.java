@@ -68,6 +68,55 @@ public class UserController {
         //当我们要操作数据的时候并且返回一个Mono，这个时候要使用flatMap
         //如果不操作数据，只是转换数据，就使用map
                         .flatMap(user -> this.userRepository.delete(user).then(Mono.just(new ResponseEntity<Void>(HttpStatus.OK))))
-                        .defaultIfEmpty(new ResponseEntity<Void>(HttpStatus.NOT_FOUND));
+                        .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    /**
+     * 修改数据
+     * 存在的时候返回200 和修改后的数据
+     * 不存在的时候返回404
+     * @param id
+     * @param originalUser
+     * @return
+     */
+    @PutMapping("/{id}")
+    public Mono<ResponseEntity<User>> updateUser(@PathVariable String id,@RequestBody User originalUser) {
+        return userRepository.findById(id)
+                        // flatMap 操作数据
+                        .flatMap(user -> {
+                            originalUser.setAge(user.getAge());
+                            originalUser.setName(user.getName());
+                            return this.userRepository.save(originalUser);
+                        })
+                        //map 转换数据
+                        .map(user -> new ResponseEntity<User>(user,HttpStatus.OK))
+                        .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+
+    /**
+     * 根据ID来查询用户
+     * 存在的时候返回用户信息
+     * 不存在的时候返回404
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public Mono<ResponseEntity<User>> getUserById(@PathVariable String id) {
+        return userRepository.findById(id)
+                                 .map(user -> new ResponseEntity<User>(user,HttpStatus.OK))
+                                 .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "/{id}",produces = "text/event-stream")
+    public Mono<ResponseEntity<User>> getUserByIdSSE(@PathVariable String id) {
+        return userRepository.findById(id)
+                .map(user -> new ResponseEntity<User>(user,HttpStatus.OK))
+                .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 }
