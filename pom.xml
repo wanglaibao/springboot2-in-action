@@ -15,6 +15,7 @@
 		<module>simple-servlet-example</module>
         <module>spring-reactive-routerfunction</module>
         <module>webflux-webclient</module>
+        <module>springboot-simple-jdbc-demo</module>
     </modules>
 	<packaging>pom</packaging>
 
@@ -84,6 +85,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
